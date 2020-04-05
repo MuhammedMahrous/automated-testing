@@ -15,6 +15,8 @@ public class HelloWorldControllerTests {
      * TODO (2.7):  get(), status().isOk() and jsonPath(,Matchers.is())
      * TODO (2.8): andReturn().getResponse() => handler
      * TODO (2.9): andDo()
+     * TODO (2.10): @MockBean
+     * TODO (2.10): @WithMockUser
      */
     private MockMvc mockMvc;
 
