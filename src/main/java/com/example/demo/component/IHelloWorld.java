@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.component;
 
 public interface IHelloWorld {
     String sayHello(String name);

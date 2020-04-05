@@ -1,5 +1,8 @@
-package com.example.demo;
+package com.example.demo.component;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class HelloWorld implements IHelloWorld {
 
     @Override

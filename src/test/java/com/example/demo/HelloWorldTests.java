@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.component.HelloWorld;
+import com.example.demo.component.IHelloWorld;
 import org.junit.jupiter.api.*;
 
 import java.time.Duration;
