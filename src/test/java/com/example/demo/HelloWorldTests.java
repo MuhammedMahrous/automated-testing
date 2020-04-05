@@ -12,25 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HelloWorldTests {
     private IHelloWorld helloWorld;
 
-    /* BeforeEach vs Before All (and TestInstance)
-     * */
-//    @BeforeEach
     @BeforeAll
     void setUp() {
         System.out.println("Setting UP.....");
         helloWorld = new HelloWorld();
     }
 
-    /**
-     * - @Test
-     * - @DisplayName class and method
-     * - assertTrue() and assertFalse()
-     * - assertNull() and assertNull()
-     * - assertEquals()
-     * - assertAll()
-     * - assertThrows()
-     * - @Disabled
-     */
     @Test
     @DisplayName("Null Name")
     void sayHello_nullName() {
