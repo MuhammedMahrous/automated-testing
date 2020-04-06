@@ -2,9 +2,17 @@ package com.example.demo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
-//TODO(3): Extensions @ExtendWith(MockitoExtension.class)
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
 public class MockitoBasics {
 
     /*
@@ -20,30 +28,27 @@ public class MockitoBasics {
      - then(), thenThrow() and thenCallRealMethod()
      */
 
-    // TODO(2): @Mock
-
     @Mock
     private MyClass myClass;
 
     @BeforeEach
     void setUp() {
-        // TODO(1): programmatic mocking
+        Mockito.when(myClass.sayHello("Ahmed"))
+                .thenReturn("Hello ya Ahmed");
 
-        // TODO(2): custom Answer
-
-        // TODO(4): when().thenReturn()
-
-        // TODO(5): when().then()
-
-        // TODO(6): when().thenThrow()
-
-        // TODO(7): when().thenCallRealMethod()
-
-        // TODO(8): two whens and MockitoSettings strictness
+        Mockito.when(myClass.sayHello("Mahmoud"))
+                .thenReturn("Hello ya Mahmoud");
     }
 
     @Test
     void test() {
+        assertEquals("Hello ya Ahmed", myClass.sayHello("Ahmed"));
+    }
+
+
+    @Test
+    void test1() {
+        assertEquals("Hello ya Mahmoud", myClass.sayHello("Mahmoud"));
     }
 
     private static class MyClass {
